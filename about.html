@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="claudiapetrillimodel - Portfolio di Claudia Petrilli: editorial, fashion, beauty e campagne." />
-    <title>claudiapetrillimodel | Claudia Petrilli</title>
+    <meta name="description" content="Scopri Claudia Petrilli e il suo percorso." />
+    <title>Chi sono | claudiapetrillimodel</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -14,7 +14,7 @@
     <div class="page-shell">
       <header class="site-header">
         <div class="container nav-wrap">
-          <a class="brand" href="#top" aria-label="claudiapetrillimodel home">
+          <a class="brand" href="portfolio.html" aria-label="claudiapetrillimodel home">
             <span class="brand-mark">CP</span>
             <span>claudiapetrillimodel</span>
           </a>
@@ -24,7 +24,6 @@
               <button type="button" class="lang-btn is-active" data-lang="it">IT</button>
               <button type="button" class="lang-btn" data-lang="en">EN</button>
             </div>
-
             <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
               <span></span>
               <span></span>
@@ -33,76 +32,31 @@
           </div>
 
           <nav class="site-nav" aria-label="Main navigation">
-            <a href="about.html" data-i18n="nav.about">Chi sono</a>
-            <a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a>
-            <a href="#campaigns" data-i18n="nav.campaigns">Campaigns</a>
-            <a href="#contact" data-i18n="nav.contact">Contact</a>
+            <a href="about.html" aria-current="page" data-i18n="nav.about">Chi sono</a>
+            <a href="portfolio.html#portfolio" data-i18n="nav.portfolio">Portfolio</a>
+            <a href="portfolio.html#campaigns" data-i18n="nav.campaigns">Campagne</a>
+            <a href="portfolio.html#contact" data-i18n="nav.contact">Contatti</a>
           </nav>
         </div>
       </header>
 
       <main id="top">
-        <section class="hero">
+        <section class="hero section">
           <div class="container hero-layout">
             <div class="hero-copy">
-              <p class="eyebrow" data-i18n="hero.eyebrow">Portfolio di modella</p>
-              <h1 data-i18n="hero.title">Ciao, sono Claudia.</h1>
-              <p class="lead" data-i18n="hero.lead">
-                Questo è il mio spazio per condividere il mio percorso e i progetti a cui lavoro. Sto preparando nuove foto: le troverai qui presto.
+              <p class="eyebrow" data-i18n="aboutPage.eyebrow">Chi sono</p>
+              <h1 data-i18n="aboutPage.title">Ciao, sono Claudia.</h1>
+              <p class="lead" data-i18n="aboutPage.intro">
+                Sto preparando questa pagina per raccontarti qualcosa di più su di me e sul mio percorso. Aggiungerò qui la mia storia molto presto.
               </p>
-
               <div class="hero-actions">
-                <a class="btn btn-primary" href="#portfolio" data-i18n="hero.primaryBtn">Guarda il portfolio</a>
-                <a class="btn btn-secondary" href="#contact" data-i18n="hero.secondaryBtn">Contattami</a>
+                <a class="btn btn-primary" href="portfolio.html" data-i18n="hero.primaryBtn">Guarda il portfolio</a>
+                <a class="btn btn-secondary" href="portfolio.html#contact" data-i18n="hero.secondaryBtn">Contattami</a>
               </div>
-
             </div>
 
             <div class="hero-visual">
-              <div class="portrait-placeholder" data-i18n="placeholder.photos">
-                Nuove foto in arrivo
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="portfolio section" id="portfolio">
-          <div class="container">
-            <div class="section-heading">
-              <p class="eyebrow" data-i18n="portfolio.eyebrow">Selezione</p>
-              <h2 data-i18n="portfolio.title">Editorial, beauty e movimento.</h2>
-            </div>
-
-            <div class="portfolio-empty" data-i18n="placeholder.portfolio">
-              Le nuove immagini del portfolio saranno aggiunte dopo lo shooting.
-            </div>
-          </div>
-        </section>
-
-        <section class="campaigns section" id="campaigns">
-          <div class="container">
-            <div class="section-heading narrow">
-              <p class="eyebrow" data-i18n="campaigns.eyebrow">Campagne</p>
-              <h2 data-i18n="campaigns.title">Collaborazioni recenti</h2>
-            </div>
-
-            <div class="campaign-grid">
-              <article class="campaign-item campaign-empty" data-i18n="placeholder.campaigns">
-                Le collaborazioni saranno aggiunte quando saranno disponibili i contenuti verificati.
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section class="comp-card section" id="comp-card">
-          <div class="container comp-wrap">
-            <div class="section-heading narrow">
-              <p class="eyebrow" data-i18n="compcard.eyebrow">Comp card</p>
-              <h2 data-i18n="compcard.title">Comp card in aggiornamento</h2>
-            </div>
-
-            <div class="comp-card-layout comp-card-empty">
-              <p data-i18n="compcard.text">La comp card scaricabile sar&agrave; disponibile dopo lo shooting professionale.</p>
+              <div class="portrait-placeholder" data-i18n="placeholder.photos">Nuove foto in arrivo</div>
             </div>
           </div>
         </section>
@@ -114,7 +68,6 @@
             <p class="eyebrow" data-i18n="contact.eyebrow">Booking</p>
             <h2 data-i18n="contact.title">Disponibile per fashion, beauty ed editorial.</h2>
           </div>
-
           <div class="footer-contact">
             <a href="mailto:claudiapetrilli8@gmail.com">claudiapetrilli8@gmail.com</a>
             <div class="socials" aria-label="Social media links">
@@ -126,14 +79,12 @@
             </div>
           </div>
         </div>
-
         <div class="container footer-bottom">
           <span>&copy; <span id="year"></span> Claudia Petrilli</span>
           <span data-i18n="footer.tag">Portfolio di modella</span>
         </div>
       </footer>
     </div>
-
     <script src="script.js"></script>
   </body>
 </html>

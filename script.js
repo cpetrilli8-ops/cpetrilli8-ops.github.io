@@ -24,6 +24,9 @@ const translations = {
     'compcard.text': 'La comp card scaricabile sara disponibile dopo lo shooting professionale.',
     'contact.eyebrow': 'Booking',
     'contact.title': 'Disponibile per fashion, beauty ed editorial.',
+    'aboutPage.eyebrow': 'Chi sono',
+    'aboutPage.title': 'Ciao, sono Claudia.',
+    'aboutPage.intro': 'Sto preparando questa pagina per raccontarti qualcosa di più su di me e sul mio percorso. Aggiungerò qui la mia storia molto presto.',
     'footer.tag': 'Portfolio di modella'
   },
   en: {
@@ -51,6 +54,9 @@ const translations = {
     'compcard.text': 'The downloadable comp card will be available after the professional photo shoot.',
     'contact.eyebrow': 'Booking',
     'contact.title': 'Available for fashion, beauty, and editorial work.',
+    'aboutPage.eyebrow': 'About me',
+    'aboutPage.title': 'Hi, I’m Claudia.',
+    'aboutPage.intro': 'I’m putting this page together to share a little more about myself and my journey. I’ll add my story here soon.',
     'footer.tag': 'Model portfolio'
   }
 };
