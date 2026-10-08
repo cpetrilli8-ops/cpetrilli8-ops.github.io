@@ -5,8 +5,8 @@ const translations = {
     'nav.campaigns': 'Campagne',
     'nav.contact': 'Contatti',
     'hero.eyebrow': 'Portfolio di modella',
-    'hero.title': 'Eleganza pura.<br />Storie forti.',
-    'hero.lead': 'Scopri il portfolio di Claudia Petrilli. Nuove foto professionali e progetti saranno aggiunti presto.',
+    'hero.title': 'Ciao, sono Claudia.',
+    'hero.lead': 'Questo è il mio spazio per condividere il mio percorso e i progetti a cui lavoro. Sto preparando nuove foto: le troverai qui presto.',
     'hero.primaryBtn': 'Guarda il portfolio',
     'hero.secondaryBtn': 'Contattami',
     'portfolio.eyebrow': 'Selezione',
@@ -24,6 +24,9 @@ const translations = {
     'compcard.text': 'La comp card scaricabile sara disponibile dopo lo shooting professionale.',
     'contact.eyebrow': 'Booking',
     'contact.title': 'Disponibile per fashion, beauty ed editorial.',
+    'aboutPage.eyebrow': 'Chi sono',
+    'aboutPage.title': 'Ciao, sono Claudia.',
+    'aboutPage.intro': 'Sto preparando questa pagina per raccontarti qualcosa di più su di me e sul mio percorso. Aggiungerò qui la mia storia molto presto.',
     'footer.tag': 'Portfolio di modella'
   },
   en: {
@@ -32,8 +35,8 @@ const translations = {
     'nav.campaigns': 'Campaigns',
     'nav.contact': 'Contact',
     'hero.eyebrow': 'Model portfolio',
-    'hero.title': 'Elegant presence.<br />Bold stories.',
-    'hero.lead': 'Explore the portfolio of Claudia Petrilli. New professional photos and projects will be added soon.',
+    'hero.title': 'Hi, I’m Claudia.',
+    'hero.lead': 'This is where I’ll share a little about my journey and the projects I’m working on. I’m getting new photos ready to share here soon.',
     'hero.primaryBtn': 'View portfolio',
     'hero.secondaryBtn': 'Get in touch',
     'portfolio.eyebrow': 'Selected work',
@@ -51,6 +54,9 @@ const translations = {
     'compcard.text': 'The downloadable comp card will be available after the professional photo shoot.',
     'contact.eyebrow': 'Booking',
     'contact.title': 'Available for fashion, beauty, and editorial work.',
+    'aboutPage.eyebrow': 'About me',
+    'aboutPage.title': 'Hi, I’m Claudia.',
+    'aboutPage.intro': 'I’m putting this page together to share a little more about myself and my journey. I’ll add my story here soon.',
     'footer.tag': 'Model portfolio'
   }
 };
