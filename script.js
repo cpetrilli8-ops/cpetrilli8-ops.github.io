@@ -25,8 +25,19 @@ const translations = {
     'contact.eyebrow': 'Booking',
     'contact.title': 'Disponibile per fashion, beauty ed editorial.',
     'aboutPage.eyebrow': 'Chi sono',
-    'aboutPage.title': 'Ciao, sono Claudia.',
-    'aboutPage.intro': 'Sto preparando questa pagina per raccontarti qualcosa di più su di me e sul mio percorso. Aggiungerò qui la mia storia molto presto.',
+    'aboutPage.title': 'Claudia Petrilli',
+    'aboutPage.intro': 'Sto costruendo il mio percorso nel modeling con curiosità e attenzione. Mi interessano fashion, beauty, e-commerce e campagne commercial e lifestyle: mondi diversi, uniti dal racconto delle persone e dello stile.',
+    'aboutPage.detailsEyebrow': 'Profilo',
+    'aboutPage.detailsTitle': 'Informazioni',
+    'aboutPage.height': 'Altezza',
+    'aboutPage.city': 'Città',
+    'aboutPage.languages': 'Lingue',
+    'aboutPage.measurements': 'Misure',
+    'aboutPage.experience': 'Esperienze',
+    'aboutPage.contact': 'Contatti professionali',
+    'aboutPage.placeholder': '[Da inserire]',
+    'aboutPage.experiencePlaceholder': '[Da completare]',
+    'aboutPage.contactPlaceholder': '[Email / agenzia da inserire]',
     'footer.tag': 'Portfolio di modella'
   },
   en: {
@@ -55,8 +66,19 @@ const translations = {
     'contact.eyebrow': 'Booking',
     'contact.title': 'Available for fashion, beauty, and editorial work.',
     'aboutPage.eyebrow': 'About me',
-    'aboutPage.title': 'Hi, I’m Claudia.',
-    'aboutPage.intro': 'I’m putting this page together to share a little more about myself and my journey. I’ll add my story here soon.',
+    'aboutPage.title': 'Claudia Petrilli',
+    'aboutPage.intro': 'I’m building my path in modeling with curiosity and care. I’m interested in fashion, beauty, e-commerce, and commercial and lifestyle campaigns—different worlds connected by the way they tell stories about people and style.',
+    'aboutPage.detailsEyebrow': 'Profile',
+    'aboutPage.detailsTitle': 'Details',
+    'aboutPage.height': 'Height',
+    'aboutPage.city': 'City',
+    'aboutPage.languages': 'Languages',
+    'aboutPage.measurements': 'Measurements',
+    'aboutPage.experience': 'Experience',
+    'aboutPage.contact': 'Professional contact',
+    'aboutPage.placeholder': '[To be added]',
+    'aboutPage.experiencePlaceholder': '[To be completed]',
+    'aboutPage.contactPlaceholder': '[Email / agency to be added]',
     'footer.tag': 'Model portfolio'
   }
 };
@@ -76,7 +98,9 @@ function applyTranslations(lang) {
   });
 
   document.documentElement.lang = lang;
-  document.title = 'claudiapetrillimodel | Claudia Petrilli';
+  document.title = document.body.dataset.page === 'about'
+    ? `${dict['aboutPage.eyebrow']} | claudiapetrillimodel`
+    : 'claudiapetrillimodel | Claudia Petrilli';
 }
 
 const defaultLang = localStorage.getItem('portfolio-lang') || 'it';
