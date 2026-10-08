@@ -24,6 +24,13 @@ const translations = {
     'compcard.text': 'La comp card scaricabile sara disponibile dopo lo shooting professionale.',
     'contact.eyebrow': 'Booking',
     'contact.title': 'Disponibile per fashion, beauty ed editorial.',
+    'contactBooking.eyebrow': 'Contatti & Booking',
+    'contactBooking.title': 'Parliamo del tuo prossimo progetto.',
+    'contactForm.name': 'Nome',
+    'contactForm.email': 'Email',
+    'contactForm.profession': 'Agenzia, brand o professione',
+    'contactForm.message': 'Messaggio',
+    'contactForm.submit': 'Invia richiesta',
     'aboutPage.eyebrow': 'Chi sono',
     'aboutPage.title': 'Claudia Petrilli',
     'aboutPage.intro': 'Sto costruendo il mio percorso nel modeling con curiosità e attenzione. Mi interessano fashion, beauty, e-commerce e campagne commercial e lifestyle: mondi diversi, uniti dal racconto delle persone e dello stile.',
@@ -65,6 +72,13 @@ const translations = {
     'compcard.text': 'The downloadable comp card will be available after the professional photo shoot.',
     'contact.eyebrow': 'Booking',
     'contact.title': 'Available for fashion, beauty, and editorial work.',
+    'contactBooking.eyebrow': 'Contact & Booking',
+    'contactBooking.title': 'Let’s talk about your next project.',
+    'contactForm.name': 'Name',
+    'contactForm.email': 'Email',
+    'contactForm.profession': 'Agency, brand, or profession',
+    'contactForm.message': 'Message',
+    'contactForm.submit': 'Send inquiry',
     'aboutPage.eyebrow': 'About me',
     'aboutPage.title': 'Claudia Petrilli',
     'aboutPage.intro': 'I’m building my path in modeling with curiosity and care. I’m interested in fashion, beauty, e-commerce, and commercial and lifestyle campaigns—different worlds connected by the way they tell stories about people and style.',
@@ -138,5 +152,31 @@ if (navToggle && nav) {
       nav.classList.remove('is-open');
       navToggle.setAttribute('aria-expanded', 'false');
     });
+  });
+}
+
+const contactForm = document.querySelector('#contact-form');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(contactForm);
+    const name = String(formData.get('name') || '').trim();
+    const email = String(formData.get('email') || '').trim();
+    const profession = String(formData.get('profession') || '').trim();
+    const message = String(formData.get('message') || '').trim();
+    const body = [
+      `Nome: ${name}`,
+      `Email: ${email}`,
+      `Agenzia, brand o professione: ${profession || '-'}`,
+      '',
+      'Messaggio:',
+      message
+    ].join('\n');
+    const subject = 'Richiesta di collaborazione — Claudia Petrilli';
+    const mailto = `mailto:claudiapetrilli8@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailto;
   });
 }
