@@ -35,6 +35,9 @@ const translations = {
     'aboutPage.measurements': 'Misure',
     'aboutPage.experience': 'Esperienze',
     'aboutPage.contact': 'Contatti professionali',
+    'aboutPage.placeholder': '[Da inserire]',
+    'aboutPage.experiencePlaceholder': '[Da completare]',
+    'aboutPage.contactPlaceholder': '[Email / agenzia da inserire]',
     'footer.tag': 'Portfolio di modella'
   },
   en: {
@@ -73,6 +76,9 @@ const translations = {
     'aboutPage.measurements': 'Measurements',
     'aboutPage.experience': 'Experience',
     'aboutPage.contact': 'Professional contact',
+    'aboutPage.placeholder': '[To be added]',
+    'aboutPage.experiencePlaceholder': '[To be completed]',
+    'aboutPage.contactPlaceholder': '[Email / agency to be added]',
     'footer.tag': 'Model portfolio'
   }
 };
