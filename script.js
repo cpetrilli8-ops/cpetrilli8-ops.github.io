@@ -6,7 +6,7 @@ const translations = {
     'nav.contact': 'Contatti',
     'hero.eyebrow': 'Portfolio di modella',
     'hero.title': 'Ciao, sono Claudia.',
-    'hero.lead': 'A closer look at my work, projects and direction as a model and creator.',
+    'hero.lead': 'Uno sguardo più da vicino al mio lavoro, ai miei progetti e alla mia visione come modella e creator.',
     'hero.primaryBtn': 'Guarda il portfolio',
     'hero.secondaryBtn': 'Contattami',
     'portfolio.eyebrow': 'Selezione',
