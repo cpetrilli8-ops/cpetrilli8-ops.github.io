@@ -93,6 +93,51 @@ p { margin: 0; color: var(--muted); line-height: 1.7; }
 .hero-metrics strong { display: block; font-size: clamp(1.4rem, 2vw, 2rem); color: var(--text); margin-bottom: 0.25rem; }
 .hero-metrics span { color: var(--muted); font-size: 0.82rem; }
 .hero-visual { display: flex; justify-content: center; }
+.hero-carousel { width: min(520px, 100%); }
+.carousel-viewport {
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 118, 0.3);
+  border-radius: 2rem;
+  background: linear-gradient(145deg, rgba(255,255,255,0.035), rgba(18,5,11,0.16));
+  touch-action: pan-y;
+}
+.carousel-track { display: flex; transition: transform 0.45s ease; }
+.carousel-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  min-height: 580px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+.carousel-slide:nth-child(2) { background: linear-gradient(145deg, rgba(212,175,118,0.1), transparent 70%); }
+.carousel-slide:nth-child(3) { background: linear-gradient(35deg, rgba(242,199,212,0.08), transparent 70%); }
+.carousel-controls { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: 1rem; }
+.carousel-arrow {
+  display: inline-grid;
+  place-items: center;
+  width: 2.7rem;
+  height: 2.7rem;
+  border: 1px solid rgba(212,175,118,0.4);
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+  color: var(--accent-strong);
+  cursor: pointer;
+}
+.carousel-arrow:hover, .carousel-arrow:focus-visible { background: rgba(212,175,118,0.15); }
+.carousel-arrow:focus-visible, .hero-carousel:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.carousel-status { min-width: 3rem; color: var(--muted); text-align: center; font-size: 0.85rem; }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 .portrait-placeholder {
   display: grid;
   place-items: center;
@@ -272,4 +317,9 @@ p { margin: 0; color: var(--muted); line-height: 1.7; }
   .portrait-card img { height: 560px; }
   .strip-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); letter-spacing: 0.12em; }
   .portrait-placeholder { min-height: 440px; }
+  .carousel-slide { min-height: 440px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .carousel-track { transition: none; }
 }

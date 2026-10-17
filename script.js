@@ -10,6 +10,9 @@ const translations = {
     'hero.lead': 'Uno sguardo più da vicino al mio lavoro, ai miei progetti e alla mia visione come modella e creator.',
     'hero.primaryBtn': 'Guarda il portfolio',
     'hero.secondaryBtn': 'Contattami',
+    'carousel.label': 'Galleria fotografica',
+    'carousel.previous': 'Foto precedente',
+    'carousel.next': 'Foto successiva',
     'portfolio.eyebrow': 'Selezione',
     'portfolio.title': 'Editorial, beauty e movimento.',
     'placeholder.photos': 'Nuove foto in arrivo',
@@ -63,6 +66,9 @@ const translations = {
     'hero.lead': 'A closer look at my work, projects and direction as a model and creator.',
     'hero.primaryBtn': 'View portfolio',
     'hero.secondaryBtn': 'Get in touch',
+    'carousel.label': 'Photo gallery',
+    'carousel.previous': 'Previous photo',
+    'carousel.next': 'Next photo',
     'portfolio.eyebrow': 'Selected work',
     'portfolio.title': 'Editorial, beauty, and movement.',
     'placeholder.photos': 'New photos coming soon',
@@ -121,6 +127,10 @@ function applyTranslations(lang) {
     node.innerHTML = text;
   });
 
+  document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+    carousel.setAttribute('aria-label', dict['carousel.label']);
+  });
+
   document.documentElement.lang = lang;
   document.title = document.body.dataset.page === 'about'
     ? `${dict['aboutPage.eyebrow']} | claudiapetrillimodel`
@@ -148,6 +158,53 @@ const yearNode = document.querySelector('#year');
 
 if (yearNode) {
   yearNode.textContent = new Date().getFullYear();
+}
+
+const carousel = document.querySelector('[data-carousel]');
+
+if (carousel) {
+  const track = carousel.querySelector('[data-carousel-track]');
+  const slides = Array.from(carousel.querySelectorAll('[data-carousel-slide]'));
+  const status = carousel.querySelector('[data-carousel-status]');
+  let currentSlide = 0;
+
+  const showSlide = (index) => {
+    currentSlide = (index + slides.length) % slides.length;
+    track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    slides.forEach((slide, slideIndex) => {
+      slide.setAttribute('aria-hidden', String(slideIndex !== currentSlide));
+    });
+    status.textContent = `${currentSlide + 1} / ${slides.length}`;
+  };
+
+  carousel.querySelector('[data-carousel-prev]').addEventListener('click', () => {
+    showSlide(currentSlide - 1);
+  });
+  carousel.querySelector('[data-carousel-next]').addEventListener('click', () => {
+    showSlide(currentSlide + 1);
+  });
+
+  let pointerStartX = null;
+  carousel.addEventListener('pointerdown', (event) => {
+    pointerStartX = event.clientX;
+  });
+  carousel.addEventListener('pointerup', (event) => {
+    if (pointerStartX === null) return;
+    const distance = event.clientX - pointerStartX;
+    pointerStartX = null;
+    if (Math.abs(distance) < 50) return;
+    showSlide(currentSlide + (distance < 0 ? 1 : -1));
+  });
+  carousel.addEventListener('pointercancel', () => {
+    pointerStartX = null;
+  });
+
+  carousel.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowLeft') showSlide(currentSlide - 1);
+    if (event.key === 'ArrowRight') showSlide(currentSlide + 1);
+  });
+
+  showSlide(0);
 }
 
 if (navToggle && nav) {
