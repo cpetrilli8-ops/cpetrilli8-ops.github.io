@@ -11,7 +11,6 @@ const translations = {
     'hero.primaryBtn': 'Guarda il portfolio',
     'hero.secondaryBtn': 'Contattami',
     'carousel.label': 'Galleria fotografica',
-    'carousel.next': 'Foto successiva',
     'portfolio.eyebrow': 'Selezione',
     'portfolio.title': 'Editorial, beauty e movimento.',
     'placeholder.photos': 'Nuove foto in arrivo',
@@ -66,7 +65,6 @@ const translations = {
     'hero.primaryBtn': 'View portfolio',
     'hero.secondaryBtn': 'Get in touch',
     'carousel.label': 'Photo gallery',
-    'carousel.next': 'Next photo',
     'portfolio.eyebrow': 'Selected work',
     'portfolio.title': 'Editorial, beauty, and movement.',
     'placeholder.photos': 'New photos coming soon',
@@ -163,7 +161,6 @@ const carousel = document.querySelector('[data-carousel]');
 if (carousel) {
   const track = carousel.querySelector('[data-carousel-track]');
   const slides = Array.from(carousel.querySelectorAll('[data-carousel-slide]'));
-  const status = carousel.querySelector('[data-carousel-status]');
   let currentSlide = 0;
 
   const showSlide = (index) => {
@@ -172,12 +169,7 @@ if (carousel) {
     slides.forEach((slide, slideIndex) => {
       slide.setAttribute('aria-hidden', String(slideIndex !== currentSlide));
     });
-    status.textContent = `${currentSlide + 1} / ${slides.length}`;
   };
-
-  carousel.querySelector('[data-carousel-next]').addEventListener('click', () => {
-    showSlide(currentSlide + 1);
-  });
 
   let pointerStartX = null;
   carousel.addEventListener('pointerdown', (event) => {
