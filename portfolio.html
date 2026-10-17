@@ -44,7 +44,7 @@
 
       <main id="top">
         <section class="hero">
-          <div class="container hero-layout">
+          <div class="container hero-layout hero-copy-only">
             <div class="hero-copy">
               <p class="eyebrow" data-i18n="hero.eyebrow">Portfolio di modella</p>
               <h1 data-i18n="hero.title">Ciao, sono Claudia.</h1>
@@ -59,16 +59,45 @@
 
             </div>
 
-            <div class="hero-visual">
-              <div class="hero-carousel" data-carousel role="region" aria-roledescription="carousel" aria-label="Galleria fotografica" tabindex="0">
-                <div class="carousel-viewport">
-                  <div class="carousel-track" data-carousel-track>
-                    <div class="portrait-placeholder carousel-slide" data-carousel-slide aria-roledescription="slide" aria-label="1 / 3" data-i18n="placeholder.photos">Nuove foto in arrivo</div>
-                    <div class="portrait-placeholder carousel-slide" data-carousel-slide aria-roledescription="slide" aria-label="2 / 3" data-i18n="placeholder.photos">Nuove foto in arrivo</div>
-                    <div class="portrait-placeholder carousel-slide" data-carousel-slide aria-roledescription="slide" aria-label="3 / 3" data-i18n="placeholder.photos">Nuove foto in arrivo</div>
-                  </div>
+          </div>
+        </section>
+
+        <section class="photo-gallery section" id="gallery" aria-labelledby="gallery-title">
+          <div class="container">
+            <div class="gallery-heading">
+              <h2 id="gallery-title" data-i18n="gallery.title">La mia galleria</h2>
+              <p data-i18n="gallery.subtitle">Una raccolta dei miei momenti preferiti</p>
+            </div>
+
+            <div class="gallery-wrapper">
+              <button class="gallery-arrow prev" type="button" aria-label="Foto precedenti" data-i18n-aria-label="gallery.previous">
+                <span aria-hidden="true">&#10094;</span>
+              </button>
+              <div class="gallery-track" id="galleryTrack" tabindex="0" role="region" aria-label="Galleria fotografica" data-i18n-aria-label="gallery.label">
+                <div class="gallery-photo" data-gallery-photo>
+                  <img src="images/photo1.jpg" alt="Foto galleria 1" data-i18n-alt="gallery.photo1" />
+                  <span aria-hidden="true" data-i18n="gallery.placeholder">Nuove foto in arrivo</span>
+                </div>
+                <div class="gallery-photo" data-gallery-photo>
+                  <img src="images/photo2.jpg" alt="Foto galleria 2" data-i18n-alt="gallery.photo2" />
+                  <span aria-hidden="true" data-i18n="gallery.placeholder">Nuove foto in arrivo</span>
+                </div>
+                <div class="gallery-photo" data-gallery-photo>
+                  <img src="images/photo3.jpg" alt="Foto galleria 3" data-i18n-alt="gallery.photo3" />
+                  <span aria-hidden="true" data-i18n="gallery.placeholder">Nuove foto in arrivo</span>
+                </div>
+                <div class="gallery-photo" data-gallery-photo>
+                  <img src="images/photo4.jpg" alt="Foto galleria 4" data-i18n-alt="gallery.photo4" />
+                  <span aria-hidden="true" data-i18n="gallery.placeholder">Nuove foto in arrivo</span>
+                </div>
+                <div class="gallery-photo" data-gallery-photo>
+                  <img src="images/photo5.jpg" alt="Foto galleria 5" data-i18n-alt="gallery.photo5" />
+                  <span aria-hidden="true" data-i18n="gallery.placeholder">Nuove foto in arrivo</span>
                 </div>
               </div>
+              <button class="gallery-arrow next" type="button" aria-label="Foto successive" data-i18n-aria-label="gallery.next">
+                <span aria-hidden="true">&#10095;</span>
+              </button>
             </div>
           </div>
         </section>
