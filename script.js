@@ -10,7 +10,17 @@ const translations = {
     'hero.lead': 'Uno sguardo più da vicino al mio lavoro, ai miei progetti e alla mia visione come modella e creator.',
     'hero.primaryBtn': 'Guarda il portfolio',
     'hero.secondaryBtn': 'Contattami',
-    'carousel.label': 'Galleria fotografica',
+    'gallery.title': 'La mia galleria',
+    'gallery.subtitle': 'Una raccolta dei miei momenti preferiti',
+    'gallery.label': 'Galleria fotografica',
+    'gallery.previous': 'Foto precedenti',
+    'gallery.next': 'Foto successive',
+    'gallery.placeholder': 'Nuove foto in arrivo',
+    'gallery.photo1': 'Foto della galleria 1',
+    'gallery.photo2': 'Foto della galleria 2',
+    'gallery.photo3': 'Foto della galleria 3',
+    'gallery.photo4': 'Foto della galleria 4',
+    'gallery.photo5': 'Foto della galleria 5',
     'portfolio.eyebrow': 'Selezione',
     'portfolio.title': 'Editorial, beauty e movimento.',
     'placeholder.photos': 'Nuove foto in arrivo',
@@ -64,7 +74,17 @@ const translations = {
     'hero.lead': 'A closer look at my work, projects and direction as a model and creator.',
     'hero.primaryBtn': 'View portfolio',
     'hero.secondaryBtn': 'Get in touch',
-    'carousel.label': 'Photo gallery',
+    'gallery.title': 'My gallery',
+    'gallery.subtitle': 'A collection of my favorite moments',
+    'gallery.label': 'Photo gallery',
+    'gallery.previous': 'Previous photos',
+    'gallery.next': 'Next photos',
+    'gallery.placeholder': 'New photos coming soon',
+    'gallery.photo1': 'Gallery photo 1',
+    'gallery.photo2': 'Gallery photo 2',
+    'gallery.photo3': 'Gallery photo 3',
+    'gallery.photo4': 'Gallery photo 4',
+    'gallery.photo5': 'Gallery photo 5',
     'portfolio.eyebrow': 'Selected work',
     'portfolio.title': 'Editorial, beauty, and movement.',
     'placeholder.photos': 'New photos coming soon',
@@ -123,8 +143,14 @@ function applyTranslations(lang) {
     node.innerHTML = text;
   });
 
-  document.querySelectorAll('[data-carousel]').forEach((carousel) => {
-    carousel.setAttribute('aria-label', dict['carousel.label']);
+  document.querySelectorAll('[data-i18n-aria-label]').forEach((node) => {
+    const text = dict[node.dataset.i18nAriaLabel];
+    if (text) node.setAttribute('aria-label', text);
+  });
+
+  document.querySelectorAll('[data-i18n-alt]').forEach((node) => {
+    const text = dict[node.dataset.i18nAlt];
+    if (text) node.setAttribute('alt', text);
   });
 
   document.documentElement.lang = lang;
@@ -156,41 +182,21 @@ if (yearNode) {
   yearNode.textContent = new Date().getFullYear();
 }
 
-const carousel = document.querySelector('[data-carousel]');
+const galleryTrack = document.querySelector('#galleryTrack');
 
-if (carousel) {
-  const track = carousel.querySelector('[data-carousel-track]');
-  const slides = Array.from(carousel.querySelectorAll('[data-carousel-slide]'));
-  let currentSlide = 0;
-
-  const showSlide = (index) => {
-    currentSlide = (index + slides.length) % slides.length;
-    track.style.transform = `translateX(-${currentSlide * 100}%)`;
-    slides.forEach((slide, slideIndex) => {
-      slide.setAttribute('aria-hidden', String(slideIndex !== currentSlide));
-    });
-  };
-
-  let pointerStartX = null;
-  carousel.addEventListener('pointerdown', (event) => {
-    pointerStartX = event.clientX;
-  });
-  carousel.addEventListener('pointerup', (event) => {
-    if (pointerStartX === null) return;
-    const distance = event.clientX - pointerStartX;
-    pointerStartX = null;
-    if (Math.abs(distance) < 50) return;
-    if (distance < 0) showSlide(currentSlide + 1);
-  });
-  carousel.addEventListener('pointercancel', () => {
-    pointerStartX = null;
+if (galleryTrack) {
+  galleryTrack.querySelectorAll('[data-gallery-photo] img').forEach((image) => {
+    const markLoaded = () => image.closest('[data-gallery-photo]').classList.add('has-photo');
+    if (image.complete && image.naturalWidth > 0) markLoaded();
+    else image.addEventListener('load', markLoaded, { once: true });
   });
 
-  carousel.addEventListener('keydown', (event) => {
-    if (event.key === 'ArrowRight') showSlide(currentSlide + 1);
+  document.querySelector('.gallery-arrow.next').addEventListener('click', () => {
+    galleryTrack.scrollBy({ left: galleryTrack.clientWidth * 0.8, behavior: 'smooth' });
   });
-
-  showSlide(0);
+  document.querySelector('.gallery-arrow.prev').addEventListener('click', () => {
+    galleryTrack.scrollBy({ left: -galleryTrack.clientWidth * 0.8, behavior: 'smooth' });
+  });
 }
 
 if (navToggle && nav) {
