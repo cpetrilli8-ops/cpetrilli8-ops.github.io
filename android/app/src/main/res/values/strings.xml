@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Elara Studio</string>
+    <string name="title_activity_main">Elara Studio</string>
+    <string name="package_name">com.elarastudio.app</string>
+    <string name="custom_url_scheme">com.elarastudio.app</string>
+</resources>
