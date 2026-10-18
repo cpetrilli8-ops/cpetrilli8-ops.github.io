@@ -1,0 +1,2 @@
+[functions.creative-assistant]
+verify_jwt = true
